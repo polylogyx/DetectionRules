@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND cmdline:("netsh interface portproxy add v4tov4 *"))

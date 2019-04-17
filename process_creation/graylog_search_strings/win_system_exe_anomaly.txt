@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND path:("*\\svchost.exe" "*\\rundll32.exe" "*\\services.exe" "*\\powershell.exe" "*\\regsvr32.exe" "*\\spoolsv.exe" "*\\lsass.exe" "*\\smss.exe" "*\\csrss.exe" "*\\conhost.exe") AND NOT (path:("*\\System32\\*" "*\\SysWow64\\*")))

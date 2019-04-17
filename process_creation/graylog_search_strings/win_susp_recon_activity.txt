@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND cmdline:("net group \"domain admins\" \/domain" "net localgroup administrators"))

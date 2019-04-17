@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND path:("*\\net.exe" "*\\net1.exe") AND cmdline:("* group*" "* localgroup*" "* user*" "* view*" "* share" "* accounts*" "* use*"))

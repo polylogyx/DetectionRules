@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND cmdline:("certutil \-f \-encode *" "certutil.exe \-f \-encode *" "certutil \-encode \-f *" "certutil.exe \-encode \-f *"))

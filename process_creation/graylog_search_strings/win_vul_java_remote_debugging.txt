@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND cmdline:"*transport=dt_socket,address=*" AND NOT (cmdline:"*address=127.0.0.1*" OR cmdline:"*address=localhost*"))

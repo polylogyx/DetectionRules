@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND cmdline:"*AAAAYInlM*" AND cmdline:("*OiCAAAAYInlM*" "*OiJAAAAYInlM*"))

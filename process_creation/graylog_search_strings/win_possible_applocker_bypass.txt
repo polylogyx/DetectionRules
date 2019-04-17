@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND cmdline:("*\\msdt.exe*" "*\\installutil.exe*" "*\\regsvcs.exe*" "*\\regasm.exe*" "*\\regsvr32.exe*" "*\\msbuild.exe*" "*\\ieexec.exe*" "*\\mshta.exe*"))

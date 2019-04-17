@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND path:("*\\wwwroot\\*" "*\\wmpub\\*" "*\\htdocs\\*") AND NOT (path:("*bin\\*" "*\\Tools\\*" "*\\SMSComponent\\*") AND parent_path:("*\\services.exe")))

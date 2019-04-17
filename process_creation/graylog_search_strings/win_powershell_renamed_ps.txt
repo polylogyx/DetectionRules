@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND Description:"Windows PowerShell" AND NOT ((action:"PROC_CREATE" AND (path:("*\\powershell.exe" "*\\powershell_ise.exe") OR Description:"Windows PowerShell ISE"))))

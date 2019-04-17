@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND (cmdline:"*EnableUnsafeClientMailRules*" OR (parent_path:"*\\outlook.exe" AND cmdline:"\\\\*\\*.exe")))

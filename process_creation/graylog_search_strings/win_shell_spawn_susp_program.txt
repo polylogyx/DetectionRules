@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND (parent_path:("*\\mshta.exe" "*\\powershell.exe" "*\\cmd.exe" "*\\rundll32.exe" "*\\cscript.exe" "*\\wscript.exe" "*\\wmiprvse.exe") AND path:("*\\schtasks.exe" "*\\nslookup.exe" "*\\certutil.exe" "*\\bitsadmin.exe" "*\\mshta.exe")) AND NOT (CurrentDirectory:"*\\ccmcache\*"))

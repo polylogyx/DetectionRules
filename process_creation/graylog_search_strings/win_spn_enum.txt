@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND (path:"*\\setspn.exe" OR Description:"*Query or reset the computer* SPN attribute*") AND cmdline:"*\-q*")

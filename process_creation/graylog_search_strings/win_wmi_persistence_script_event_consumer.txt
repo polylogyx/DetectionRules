@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND path:"C\:\\WINDOWS\\system32\\wbem\\scrcons.exe" AND parent_path:"C\:\\Windows\\System32\\svchost.exe")

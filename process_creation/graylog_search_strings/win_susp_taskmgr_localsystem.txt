@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND owner_uid:"NT AUTHORITY\\SYSTEM" AND path:"*\\taskmgr.exe")

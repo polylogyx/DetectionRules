@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND parent_path:"*\\svchost.exe" AND path:"*\\mshta.exe")

@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND (cmdline:"*\\calc.exe *" OR (action:"PROC_CREATE" AND path:"*\\calc.exe" AND NOT (path:"*\\Windows\\Sys*"))))

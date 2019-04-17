@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND (parent_path:"*\\System32\\control.exe" AND cmdline:"*\\rundll32.exe *") AND NOT (cmdline:"*Shell32.dll*"))

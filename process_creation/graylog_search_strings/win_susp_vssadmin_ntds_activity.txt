@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND cmdline:("vssadmin.exe Delete Shadows" "vssadmin create shadow \/for=C\:" "copy \\?\\GLOBALROOT\\Device\\*\\windows\\ntds\\ntds.dit" "copy \\?\\GLOBALROOT\\Device\\*\\config\\SAM" "vssadmin delete shadows \/for=C\:" "reg SAVE HKLM\\SYSTEM " "esentutl.exe \/y \/vss *\\ntds.dit*"))

@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND cmdline:("*\\ping.exe 0x*" "*\\ping 0x*"))

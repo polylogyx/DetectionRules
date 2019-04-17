@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND path:"*\\cmdkey.exe" AND cmdline:"* \/list *")

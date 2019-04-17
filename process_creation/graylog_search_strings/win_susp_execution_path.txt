@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND path:("*\\$Recycle.bin" "*\\owner_uids\\All owner_uids\\*" "*\\owner_uids\\Default\\*" "*\\owner_uids\\Public\\*" "C\:\\Perflogs\\*" "*\\config\\systemprofile\\*" "*\\Windows\\Fonts\\*" "*\\Windows\\IME\\*" "*\\Windows\\addins\\*"))

@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND (path:("*\\rundll32.exe") OR Description:("*Windows\-Hostprozess \(Rundll32\)*")) AND cmdline:("*Default.GetString*" "*FromBase64String*"))

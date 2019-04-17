@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND parent_path:("*\\w3wp.exe" "*\\httpd.exe" "*\\nginx.exe" "*\\php\-cgi.exe") AND path:("*\\cmd.exe" "*\\sh.exe" "*\\bash.exe" "*\\powershell.exe"))

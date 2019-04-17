@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND path:("*\\wscript.exe" "*\\cscript.exe") AND cmdline:("*.jse" "*.vbe" "*.js" "*.vba"))

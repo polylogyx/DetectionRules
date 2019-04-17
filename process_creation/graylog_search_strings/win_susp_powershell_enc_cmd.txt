@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND cmdline:("* \-e JAB*" "* \-enc JAB*" "* \-encodedcommand JAB*" "* BA\^J e\-") AND NOT (cmdline:"* \-ExecutionPolicy remotesigned *"))

@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND (path:"*\\schtasks.exe" AND cmdline:"* \/create *") AND NOT (owner_uid:"NT AUTHORITY\\SYSTEM"))

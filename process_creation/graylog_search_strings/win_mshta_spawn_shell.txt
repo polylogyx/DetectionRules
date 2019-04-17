@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND (parent_path:"*\\mshta.exe" AND path:("*\\cmd.exe" "*\\powershell.exe" "*\\wscript.exe" "*\\cscript.exe" "*\\sh.exe" "*\\bash.exe" "*\\reg.exe" "*\\regsvr32.exe" "*\\BITSADMIN*")) AND NOT (cmdline:("*\/HP\/HP*" "*\\HP\\HP*")))

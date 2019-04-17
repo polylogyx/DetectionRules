@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND ((path:"*\\regsvr32.exe" AND cmdline:"*\\Temp\\*") OR (path:"*\\regsvr32.exe" AND parent_path:"*\\powershell.exe") OR (path:"*\\regsvr32.exe" AND cmdline:("*\/i\:http* scrobj.dll" "*\/i\:ftp* scrobj.dll")) OR (path:"*\\wscript.exe" AND parent_path:"*\\regsvr32.exe") OR (path:"*\\EXCEL.EXE" AND cmdline:"*..\\..\\..\\Windows\\System32\\regsvr32.exe *")))

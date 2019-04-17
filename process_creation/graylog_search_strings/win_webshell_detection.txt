@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND parent_path:("*\\apache*" "*\\tomcat*" "*\\w3wp.exe" "*\\php\-cgi.exe" "*\\nginx.exe" "*\\httpd.exe") AND cmdline:("whoami" "net user" "ping \-n" "systeminfo"))

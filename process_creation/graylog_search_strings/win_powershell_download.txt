@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND path:"*\\powershell.exe" AND cmdline:("*new\-object system.net.webclient\).downloadstring\(*" "*new\-object system.net.webclient\).downloadfile\(*" "*new\-object net.webclient\).downloadstring\(*" "*new\-object net.webclient\).downloadfile\(*"))

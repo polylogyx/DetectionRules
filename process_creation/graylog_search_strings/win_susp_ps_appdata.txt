@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND cmdline:("* \/c powershell*\\AppData\\Local\\*" "* \/c powershell*\\AppData\\Roaming\\*"))

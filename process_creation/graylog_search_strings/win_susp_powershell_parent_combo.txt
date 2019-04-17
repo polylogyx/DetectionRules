@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND (parent_path:("*\\wscript.exe" "*\\cscript.exe") AND path:("*\\powershell.exe")) AND NOT (CurrentDirectory:"*\\Health Service State\\*"))

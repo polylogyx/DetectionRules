@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND (parent_path:"*\\mmc.exe" AND path:"*\\cmd.exe") AND NOT (cmdline:"*\\RunCmd.cmd"))

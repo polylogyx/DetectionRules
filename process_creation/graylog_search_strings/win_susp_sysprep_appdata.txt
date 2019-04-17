@@ -1,0 +1,1 @@
+(action:"PROC_CREATE" AND cmdline:("*\\sysprep.exe *\\AppData\\*" "sysprep.exe *\\AppData\\*"))
