@@ -1,0 +1,24 @@
+title: Suspicious Reconnaissance Activity
+status: experimental
+description: Detects suspicious command line activity on Windows systems
+author: PolyLogyx
+tags:
+    - attack.discovery
+    - attack.t1087
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection:
+        cmdline:
+            - net group "domain admins" /domain
+            - net localgroup administrators
+    condition: selection
+falsepositives:
+    - Inventory tool runs
+    - Penetration tests
+    - Administrative activity
+analysis:
+    recommendation: Check if the user that executed the commands is suspicious (e.g.
+        service accounts, LOCAL_SYSTEM)
+level: medium

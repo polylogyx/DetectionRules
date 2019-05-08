@@ -1,0 +1,22 @@
+title: Taskmgr as Parent
+status: experimental
+description: Detects the creation of a process from Windows task manager
+tags:
+    - attack.defense_evasion
+    - attack.t1036
+author: PolyLogyx
+date: 2018/03/13
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection:
+        parent_path: '*\taskmgr.exe'
+    filter:
+        path:
+            - resmon.exe
+            - mmc.exe
+    condition: selection and not filter
+falsepositives:
+    - Administrative activity
+level: low

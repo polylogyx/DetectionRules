@@ -1,0 +1,20 @@
+title: Invocation of Active Directory Diagnostic Tool (ntdsutil.exe)
+description: Detects execution of ntdsutil.exe, which can be used for various attacks
+    against the NTDS database (NTDS.DIT)
+status: experimental
+references:
+    - https://jpcertcc.github.io/ToolAnalysisResultSheet/details/ntdsutil.htm
+author: PolyLogyx
+tags:
+    - attack.credential_access
+    - attack.t1003
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection:
+        cmdline: '*\ntdsutil*'
+    condition: selection
+falsepositives:
+    - NTDS maintenance
+level: high

@@ -1,0 +1,25 @@
+title: Suspicious Parent of Csc.exe
+description: Detects a suspicious parent of csc.exe, which could by a sign of payload
+    delivery
+status: experimental
+references:
+    - https://twitter.com/SBousseaden/status/1094924091256176641
+author: PolyLogyx
+date: 2019/02/11
+tags:
+    - attack.defense_evasion
+    - attack.t1036
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection:
+        path: '*\csc.exe*'
+        parent_path:
+            - '*\wscript.exe'
+            - '*\cscript.exe'
+            - '*\mshta.exe'
+    condition: selection
+falsepositives:
+    - Unkown
+level: high

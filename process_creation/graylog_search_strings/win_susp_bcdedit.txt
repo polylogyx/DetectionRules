@@ -1,1 +1,0 @@
-(action:"PROC_CREATE" AND NewProcessName:"*\\fsutil.exe" AND Processcmdline:("*delete*" "*deletevalue*" "*import*"))

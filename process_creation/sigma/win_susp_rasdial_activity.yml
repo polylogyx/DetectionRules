@@ -1,0 +1,22 @@
+title: Suspicious RASdial Activity
+description: Detects suspicious process related to rasdial.exe
+status: experimental
+references:
+    - https://twitter.com/subTee/status/891298217907830785
+author: PolyLogyx
+tags:
+    - attack.defense_evasion
+    - attack.execution
+    - attack.t1064
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection:
+        cmdline:
+            - rasdial
+    condition: selection
+falsepositives:
+    - False positives depend on scripts and administrative tools used in the monitored
+        environment
+level: medium

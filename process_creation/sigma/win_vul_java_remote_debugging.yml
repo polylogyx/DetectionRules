@@ -1,0 +1,20 @@
+title: Java Running with Remote Debugging
+description: Detects a JAVA process running with remote debugging allowing more than
+    just localhost to connect
+author: PolyLogyx
+tags:
+    - attack.discovery
+    - attack.t1046
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection:
+        cmdline: '*transport=dt_socket,address=*'
+    exclusion:
+        -   cmdline: '*address=127.0.0.1*'
+        -   cmdline: '*address=localhost*'
+    condition: selection and not exclusion
+falsepositives:
+    - unknown
+level: medium

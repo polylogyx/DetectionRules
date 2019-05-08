@@ -1,0 +1,29 @@
+title: Webshell Detection With Command Line Keywords
+description: Detects certain command line parameters often used during reconnaissance
+    activity via web shells
+author: PolyLogyx
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection:
+        parent_path:
+            - '*\apache*'
+            - '*\tomcat*'
+            - '*\w3wp.exe'
+            - '*\php-cgi.exe'
+            - '*\nginx.exe'
+            - '*\httpd.exe'
+        cmdline:
+            - whoami
+            - net user
+            - ping -n
+            - systeminfo
+    condition: selection
+tags:
+    - attack.privilege_escalation
+    - attack.persistence
+    - attack.t1100
+falsepositives:
+    - unknown
+level: high

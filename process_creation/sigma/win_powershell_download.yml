@@ -1,0 +1,23 @@
+title: PowerShell Download from URL
+status: experimental
+description: Detects a Powershell process that contains download commands in its command
+    line string
+author: PolyLogyx
+tags:
+    - attack.t1086
+    - attack.execution
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection:
+        path: '*\powershell.exe'
+        cmdline:
+            - '*new-object system.net.webclient).downloadstring(*'
+            - '*new-object system.net.webclient).downloadfile(*'
+            - '*new-object net.webclient).downloadstring(*'
+            - '*new-object net.webclient).downloadfile(*'
+    condition: selection
+falsepositives:
+    - unknown
+level: medium

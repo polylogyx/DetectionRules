@@ -1,0 +1,53 @@
+title: Squirrel Lolbin
+status: experimental
+description: Detects Possible Squirrel Packages Manager as Lolbin
+references:
+    - http://www.hexacorn.com/blog/2019/03/30/sqirrel-packages-manager-as-a-lolbin-a-k-a-many-electron-apps-are-lolbins-by-default/
+tags:
+    - attack.execution
+author: PolyLogyx
+falsepositives:
+    - 1Clipboard
+    - Beaker Browser
+    - Caret
+    - Collectie
+    - Discord
+    - Figma
+    - Flow
+    - Ghost
+    - GitHub Desktop
+    - GitKraken
+    - Hyper
+    - Insomnia
+    - JIBO
+    - Kap
+    - Kitematic
+    - Now Desktop
+    - Postman
+    - PostmanCanary
+    - Rambox
+    - Simplenote
+    - Skype
+    - Slack
+    - SourceTree
+    - Stride
+    - Svgsus
+    - WebTorrent
+    - WhatsApp
+    - WordPress.com
+    - atom
+    - gitkraken
+    - slack
+    - teams
+level: high
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection:
+        path:
+            - '*\update.exe'
+        cmdline:
+            - '*--processStart*.exe*'
+            - "*\u2013createShortcut*.exe*"
+    condition: selection

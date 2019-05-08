@@ -1,0 +1,23 @@
+title: Suspicious Svchost Process
+status: experimental
+description: Detects a suspicious svchost process start
+tags:
+    - attack.defense_evasion
+    - attack.t1036
+author: PolyLogyx
+date: 2017/08/15
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection:
+        path: '*\svchost.exe'
+    filter:
+        parent_path:
+            - '*\services.exe'
+            - '*\MsMpEng.exe'
+            - '*\Mrt.exe'
+    condition: selection and not filter
+falsepositives:
+    - Unknown
+level: high

@@ -1,0 +1,29 @@
+title: Execution in Webserver Root Folder
+status: experimental
+description: Detects a suspicious program execution in a web service root folder (filter
+    out false positives)
+author: PolyLogyx
+tags:
+    - attack.persistence
+    - attack.t1100
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection:
+        path:
+            - '*\wwwroot\\*'
+            - '*\wmpub\\*'
+            - '*\htdocs\\*'
+    filter:
+        path:
+            - '*bin\\*'
+            - '*\Tools\\*'
+            - '*\SMSComponent\\*'
+        parent_path:
+            - '*\services.exe'
+    condition: selection and not filter
+falsepositives:
+    - Various applications
+    - Tools that include ping or nslookup command invocations
+level: medium

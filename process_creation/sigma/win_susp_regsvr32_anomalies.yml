@@ -1,0 +1,35 @@
+title: Regsvr32 Anomaly
+status: experimental
+description: Detects various anomalies in relation to regsvr32.exe
+author: PolyLogyx
+references:
+    - https://subt0x10.blogspot.de/2017/04/bypass-application-whitelisting-script.html
+tags:
+    - attack.t1117
+    - attack.defense_evasion
+    - attack.execution
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    selection1:
+        path: '*\regsvr32.exe'
+        cmdline: '*\Temp\\*'
+    selection2:
+        path: '*\regsvr32.exe'
+        parent_path: '*\powershell.exe'
+    selection3:
+        path: '*\regsvr32.exe'
+        cmdline:
+            - '*/i:http* scrobj.dll'
+            - '*/i:ftp* scrobj.dll'
+    selection4:
+        path: '*\wscript.exe'
+        parent_path: '*\regsvr32.exe'
+    selection5:
+        path: '*\EXCEL.EXE'
+        cmdline: '*..\..\..\Windows\System32\regsvr32.exe *'
+    condition: 1 of them
+falsepositives:
+    - Unknown
+level: high
