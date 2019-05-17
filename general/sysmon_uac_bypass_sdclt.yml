@@ -1,0 +1,21 @@
+title: UAC Bypass via sdclt
+status: experimental
+description: Detects changes to HKCU:\Software\Classes\exefile\shell\runas\command\isolatedCommand
+references:
+    - https://enigma0x3.net/2017/03/17/fileless-uac-bypass-using-sdclt-exe/
+author: PolyLogyx
+logsource:
+    product: win_plgx_extension
+detection:
+    selection:
+        action: 'REG_SETVALUE'
+        target_name: 'HKEY_USERS\\*\Classes\exefile\shell\runas\command\isolatedCommand'
+    condition: selection
+tags:
+    - attack.defense_evasion
+    - attack.privilege_escalation
+    - attack.t1088
+falsepositives:
+    - unknown
+level: high
+

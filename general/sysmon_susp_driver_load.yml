@@ -1,0 +1,15 @@
+title: Suspicious Driver Load from Temp
+description: Detects a driver load from a temporary directory
+author: PolyLogyx
+tags: 
+  - attack.persistence
+  - attack.t1050
+logsource:
+    product: win_plgx_extension
+detection:
+    selection:
+        image_path: '*\Temp\\*'
+    condition: selection
+falsepositives:
+    - there is a relevant set of false positives depending on applications in the environment 
+level: medium

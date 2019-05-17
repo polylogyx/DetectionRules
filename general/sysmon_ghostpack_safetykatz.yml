@@ -1,0 +1,21 @@
+title: Detection of SafetyKatz
+status: experimental
+description: Detects possible SafetyKatz Behaviour
+references:
+    - https://github.com/GhostPack/SafetyKatz
+tags:
+    - attack.credential_access
+    - attack.t1003
+author: PolyLogyx
+date: 2018/07/24
+logsource:
+    product: win_plgx_extension
+    catrgory: file_events
+detection:
+    selection:
+        action: 'FILE_CREATE'
+        target_path: '*\Temp\debug.bin'
+    condition: selection
+falsepositives:
+    - Unknown
+level: high

@@ -1,0 +1,21 @@
+title: RDP Sensitive Settings Changed
+description: Detects changes to RDP terminal service sensitive settings
+references:
+    - https://blog.menasec.net/2019/02/threat-hunting-rdp-hijacking-via.html
+date: 2019/04/03
+author: PolyLogyx
+logsource:
+   product: win_plgx_extension
+detection:
+    selection_reg:
+        action: 'REG_SETVALUE'
+        target_name:
+            - '*\services\TermService\Parameters\ServiceDll*'
+            - '*\Control\Terminal Server\fSingleSessionPerUser*'
+            - '*\Control\Terminal Server\fDenyTSConnections*'
+    condition: selection_reg
+tags:
+    - attack.defense_evasion
+falsepositives:
+    - unknown
+level: high

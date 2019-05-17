@@ -1,0 +1,32 @@
+---
+action: global
+title: DNS ServerLevelPluginDll Install
+status: experimental
+description: Detects the installation of a plugin DLL via ServerLevelPluginDll parameter in Registry, which can be used to execute code in context of the DNS server (restart required)
+references:
+    - https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83
+date: 2017/05/08
+author: PolyLogyx
+tags:
+    - attack.defense_evasion
+    - attack.t1073
+detection:
+    condition: 1 of them
+falsepositives:
+    - unknown
+level: high
+---
+logsource:
+    product: win_plgx_extension
+    category: registry_events
+detection:
+    dnsregmod:
+        action: 'REG_SETVALUE'
+        target_name: '*\services\DNS\Parameters\ServerLevelPluginDll'
+---
+logsource:
+    category: process_creation
+    product: win_plgx_extension
+detection:
+    dnsadmin:
+        cmdline: 'dnscmd.exe /config /serverlevelplugindll *'

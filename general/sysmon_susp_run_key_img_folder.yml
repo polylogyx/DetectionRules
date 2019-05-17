@@ -1,0 +1,30 @@
+title: New RUN Key Pointing to Suspicious Folder
+status: experimental
+description: Detects suspicious new RUN key element pointing to an executable in a suspicious folder
+references:
+    - https://www.fireeye.com/blog/threat-research/2018/08/fin7-pursuing-an-enigmatic-and-evasive-global-criminal-operation.html
+author: PolyLogyx
+tags:
+    - attack.persistence
+    - attack.t1060
+date: 2018/25/08
+logsource:
+    product: win_plgx_extension
+detection:
+    selection:
+        action: 'REG_SETVALUE'
+        target_name:
+          - '*\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\\*'
+          - '*\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce\\*'
+        value_data:
+          - 'C:\Windows\Temp\\*'
+          - '*\AppData\\*'
+          - 'C:\$Recycle.bin\\*'
+          - 'C:\Temp\\*'
+          - 'C:\Users\Public\\*'
+          - 'C:\Users\Default\\*'
+          - 'C:\Users\Desktop\\*'
+    condition: selection
+falsepositives:
+    - Software with rare behaviour
+level: high

@@ -1,0 +1,21 @@
+title: QuarksPwDump Dump File
+status: experimental
+description: Detects a dump file written by QuarksPwDump password dumper
+references:
+    - https://jpcertcc.github.io/ToolAnalysisResultSheet/details/QuarksPWDump.htm
+author: PolyLogyx
+date: 2018/02/10
+tags:
+  - attack.credential_access
+  - attack.t1003
+level: critical
+logsource:
+    product: win_plgx_extension
+detection:
+    selection:
+        action: 'FILE_CREATE'
+        target_path: '*\AppData\Local\Temp\SAM-*.dmp*'
+    condition: selection
+falsepositives:
+    - Unknown
+
